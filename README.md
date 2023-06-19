@@ -42,13 +42,28 @@ public class MyClass
         _MenuManager = MenuManager; 
     } 
 
-    public async Task MyMethod() 
-    { 
-        MenuItem root = new MenuItem("Main Menu");
-        MenuItem item1 = new MenuItem("Option 1", Action1);
-        MenuItem item2 = new MenuItem("Option 2", Action2);
-        MenuItem submenu = new MenuItem("Submenu");
-        MenuItem submenuItem = new MenuItem("Submenu Option", SubmenuAction);
+    public static void Action1()
+    {
+        Console.WriteLine("Action 1 was triggered!");
+    }
+
+    public static void Action2()
+    {
+        Console.WriteLine("Action 2 was triggered!");
+    }
+
+    public static void SubmenuAction()
+    {
+        Console.WriteLine("Submenu action was triggered!");
+    }
+
+    public static void Main(string[] args)
+    {
+        MenuItem root = new MenuItem("root", "Main Menu");
+        MenuItem item1 = new MenuItem("option1", "Option 1", Action1);
+        MenuItem item2 = new MenuItem("option2", "Option 2", Action2);
+        MenuItem submenu = new MenuItem("submenu1", "Submenu");
+        MenuItem submenuItem = new MenuItem("suboption1", "Submenu Option", SubmenuAction);
 
         // Add the submenu item to the submenu
         submenu.AddSubmenu(submenuItem);
@@ -58,11 +73,9 @@ public class MyClass
         root.AddSubmenu(item2);
         root.AddSubmenu(submenu);
 
-        // Display the menu
         MenuManager manager = new MenuManager(root);
         manager.Start();
-
-    } 
+    }
 } 
 ``` 
 
