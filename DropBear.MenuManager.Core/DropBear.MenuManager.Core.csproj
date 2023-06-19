@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Title>Simple Menu Manager</Title>
     <Description>A very simple menu manager implementation using Spectre Console as a backend.</Description>
     <Author>Terrence Kuchel aka DropBear</Author>
@@ -15,6 +15,7 @@
     <PackageReleaseNotes>Released under MIT license.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/tkuchel/DropBear.MenuManager.Core</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/tkuchel/DropBear.MenuManager.Core/blob/main/LICENSE.txt</PackageLicenseUrl>
+    <Authors>Terrence Kuchel aka DropBear</Authors>
   </PropertyGroup>
 
       <ItemGroup>

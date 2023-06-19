@@ -72,12 +72,11 @@ public class MenuManager
         {
             try
             {
-                var prompt = new SelectionPrompt<string>()
-                    .Title("Please select an option:");
+                var prompt = new SelectionPrompt<string>().Title("Please select an option:");
 
                 foreach (var item in CurrentMenu.Submenu)
                 {
-                    prompt.AddChoices(item.Name);
+                    prompt.AddChoices(item.Description);
                 }
 
                 if (CurrentMenu != RootMenu)
@@ -93,7 +92,7 @@ public class MenuManager
                     continue;
                 }
 
-                var selectedOption = CurrentMenu.Submenu.Find(item => item.Name == result);
+                var selectedOption = CurrentMenu.Submenu.Find(item => item.Description == result);
 
                 if (selectedOption.Submenu.Count > 0)
                 {

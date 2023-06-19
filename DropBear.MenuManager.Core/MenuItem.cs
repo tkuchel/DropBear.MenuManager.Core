@@ -9,9 +9,14 @@ using System.Collections.Generic;
 public class MenuItem
 {
     /// <summary>
-    /// Gets or sets the name of the menu item.
+    /// Gets or sets the identifier of the menu item.
     /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the description of the menu item. This is displayed as the text for the menu choice.
+    /// </summary>
+    public string Description { get; set; }
 
     /// <summary>
     /// Gets or sets the action to be executed when the menu item is selected.
@@ -29,13 +34,15 @@ public class MenuItem
     public MenuItem Parent { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the MenuItem class with the specified name and action.
+    /// Initializes a new instance of the MenuItem class with the specified name, description, and action.
     /// </summary>
-    /// <param name="name">The name of the menu item.</param>
+    /// <param name="name">The identifier of the menu item.</param>
+    /// <param name="description">The description of the menu item. This is displayed as the text for the menu choice.</param>
     /// <param name="action">The action to be executed when the menu item is selected.</param>
-    public MenuItem(string name, Action action = null)
+    public MenuItem(string name, string description, Action action = null)
     {
         Name = name;
+        Description = description;
         Action = action;
         Submenu = new List<MenuItem>();
     }
