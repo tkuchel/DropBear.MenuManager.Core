@@ -19,9 +19,9 @@ public class MenuItem
     public string Description { get; set; }
 
     /// <summary>
-    /// Gets or sets the action to be executed when the menu item is selected.
+    /// Gets or sets the async action to be executed when the menu item is selected.
     /// </summary>
-    public Action Action { get; set; }
+    public Func<Task> Action { get; set; }
 
     /// <summary>
     /// Gets the submenu of the menu item.
@@ -39,7 +39,7 @@ public class MenuItem
     /// <param name="name">The identifier of the menu item.</param>
     /// <param name="description">The description of the menu item. This is displayed as the text for the menu choice.</param>
     /// <param name="action">The action to be executed when the menu item is selected.</param>
-    public MenuItem(string name, string description, Action action = null)
+    public MenuItem(string name, string description, Func<Task> action = null)
     {
         Name = name;
         Description = description;

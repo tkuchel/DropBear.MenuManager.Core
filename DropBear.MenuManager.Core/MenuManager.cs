@@ -3,6 +3,7 @@
 using Spectre.Console;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 /// <summary>
 /// Class responsible for managing menus and maintaining the main loop of the program.
@@ -66,7 +67,7 @@ public class MenuManager
     /// <summary>
     /// Starts the menu loop.
     /// </summary>
-    public void Start()
+    public async Task StartAsync()
     {
         while (true)
         {
@@ -100,7 +101,7 @@ public class MenuManager
                 }
                 else
                 {
-                    selectedOption.Action?.Invoke();
+                    await selectedOption.Action?.Invoke();
                 }
             }
             catch (Exception ex)
