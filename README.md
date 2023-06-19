@@ -44,9 +44,24 @@ public class MyClass
 
     public async Task MyMethod() 
     { 
-        // Use the cache manager 
-        bool exists = await _MenuManager.ExistsInMemoryCache("myKey"); 
-        // Other code... 
+        MenuItem root = new MenuItem("Main Menu");
+        MenuItem item1 = new MenuItem("Option 1", Action1);
+        MenuItem item2 = new MenuItem("Option 2", Action2);
+        MenuItem submenu = new MenuItem("Submenu");
+        MenuItem submenuItem = new MenuItem("Submenu Option", SubmenuAction);
+
+        // Add the submenu item to the submenu
+        submenu.AddSubmenu(submenuItem);
+
+        // Add the items to the root menu
+        root.AddSubmenu(item1);
+        root.AddSubmenu(item2);
+        root.AddSubmenu(submenu);
+
+        // Display the menu
+        MenuManager manager = new MenuManager(root);
+        manager.Start();
+
     } 
 } 
 ``` 
